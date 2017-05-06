@@ -1,0 +1,20 @@
+{
+  "name": "@npm/decorate",
+  "version": "1.0.0",
+  "main": "decorate.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "Chris Dickinson <chris@neversaw.us> (http://neversaw.us/)",
+  "license": "ISC",
+  "description": "decorate a function, forwarding properties",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/decorate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/decorate/issues"
+  },
+  "homepage": "https://github.com/npm/decorate#readme"
+}
