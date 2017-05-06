@@ -7,9 +7,11 @@ function named (msg) {
 }
 named.property = 3
 
-const decorated = decorate(named, msg => {
+const wrapped = msg => {
   return named('hello ' + msg)
-})
+}
+
+const decorated = decorate(named, wrapped)
 
 assert.equal(decorated.name, 'named')
 assert.equal(decorated.property, 3)
@@ -20,6 +22,6 @@ assert.equal(decorate.undecorate(decorate.undecorate(decorated)), null)
 
 const [outer, inner, ...rest] = [...decorate.decorations(decorated)]
 
-assert.equal(outer, decorated)
+assert.equal(outer, wrapped)
 assert.equal(inner, named)
 assert.deepEqual(rest, [])

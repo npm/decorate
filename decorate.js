@@ -2,10 +2,12 @@
 
 module.exports = Object.assign(decorate, {undecorate, decorations})
 
+const DECORATION = Symbol.for('@npm/decoration')
 const DECORATED = Symbol.for('@npm/decorate')
 
 function decorate (inner, wrapper) {
   merged[DECORATED] = inner
+  merged[DECORATION] = wrapper
   Object.assign(merged, inner)
   Object.defineProperty(merged, 'name', {
     get () {
@@ -25,7 +27,11 @@ function undecorate (fn) {
 
 function * decorations (fn) {
   do {
-    yield fn
+    if (fn[DECORATED]) {
+      yield * decorations(fn[DECORATION])
+    } else {
+      yield fn
+    }
   } while (fn = undecorate(fn))
 }
 

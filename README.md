@@ -33,7 +33,7 @@ Return the inner function of a decorated function. or null.
 
 ### `decorate.decorations(Function) -> Iterator<Function>`
 
-Return an iterator that yields all decorations of a given function in order.
+Return an iterator that yields all decoration wrappers of a given function in order.
 
 ## License
 
