@@ -2,7 +2,7 @@
 
 module.exports = Object.assign(decorate, {undecorate, decorations})
 
-const DECORATED = Symbol('decorated')
+const DECORATED = Symbol.for('@npm/decorate')
 
 function decorate (inner, wrapper) {
   merged[DECORATED] = inner
