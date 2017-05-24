@@ -6,9 +6,9 @@ const DECORATION = Symbol.for('@npm/decoration')
 const DECORATED = Symbol.for('@npm/decorate')
 
 function decorate (inner, wrapper) {
+  Object.assign(merged, inner)
   merged[DECORATED] = inner
   merged[DECORATION] = wrapper
-  Object.assign(merged, inner)
   Object.defineProperty(merged, 'name', {
     get () {
       return inner.name
