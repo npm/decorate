@@ -1,6 +1,6 @@
 {
   "name": "@npm/decorate",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "decorate.js",
   "scripts": {
     "test": "node test.js"
