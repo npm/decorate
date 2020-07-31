@@ -13,9 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/npm/decorate.git"
   },
-  "publishConfig": {
-  "registry": "https://npm.pkg.github.com/npm"
-  },
   "bugs": {
     "url": "https://github.com/npm/decorate/issues"
   },
