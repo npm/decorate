@@ -39,3 +39,4 @@ jobs:
       - name: Publish package
         if: steps.compare_versions.conclusion == 'Success'
         run: npm publish
+        
